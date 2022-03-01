@@ -1,0 +1,50 @@
+titles
+-
+title_id varchar(80) pk
+title varchar(80)
+
+departments
+-
+dept_no varchar(80)
+dept_name varchar(80)
+CONSTRAINT dept_data PRIMARY KEY (dept_no, dept_name)
+
+employees
+-
+emp_no int pk
+emp_title varchar(80) fk - titles.title_id 
+birth_date date
+first_name varchar(80)
+last_name varchar(80)
+sex varchar(80)
+hire_date date
+
+salaries
+-
+emp_no int fk - employees.emp_no
+salary int
+CONSTRAINT comp_salary PRIMARY KEY (emp_no, salary)
+FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
+
+dept_manager
+-
+dept_no varchar(80) 
+emp_no int fk - employees.emp_no
+FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
+
+dept_emp
+-
+emp_no int fk - employees.emp_no
+dept_no fk - departments.dept_no
+CONSTRAINT emp_dept PRIMARY KEY (emp_no, dept_no)
+FOREIGN KEY (emp_no) REFERENCES Employees(emp_no)
+FOREIGN KEY (dept_no) REFERENCES departments(dept_no)
+
+
+
+TITLES
+DEPARTMENT
+EMPLOYEES
+SALARIES
+DEPT_MANAGER
+DEPT_EMP
