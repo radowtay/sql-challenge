@@ -1,6 +1,6 @@
 # sql-challenge
 
-Please find in this project our setup of the company employee data.  The required lists and queries can be found above.  Some of this information seems fishy...please advise.
+Please find in this project our setup of the company employee data.  The required lists and queries can be found above.
 
 * Query file entitled: query_lists.sql
 * Code file for table creation: table_key_creation.sql
